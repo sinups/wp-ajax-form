@@ -10,7 +10,7 @@
 ## Шаблон формы обратной связи .
 Файл : `form.php`.
 
-`
+```
 <form action="<?php echo admin_url('admin-ajax.php?action=send_mail'); ?>" method="post" class="form-send-mail">
     <div class="form-group">
         <input type="text" placeholder="Имя*">
@@ -25,13 +25,12 @@
         <input type="submit" class="btn-main" value="Получить каталог">
     </div>
 </form>
-`
+```
 
 ## Создадим произвольный тип записи
 Файл : `fucntion.php`.
 
-`
-
+```
 add_action('init', 'cpt_mail_calback');
 
 function cpt_mail_calback()
@@ -74,13 +73,13 @@ function cpt_mail_calback()
     );
     register_post_type("mail", $args);
     }
-`
+```
 
 
 ## Ajax обработчик формы
 Файл : `fucntion.php`.
 
-`
+```
 function send_mail()
     {
     /* Забираем отправленные данные */
@@ -109,11 +108,13 @@ function send_mail()
 
 add_action("wp_ajax_send_mail", "send_mail");
 add_action("wp_ajax_nopriv_send_mail", "send_mail");
-`
+```
 
 
 ## Скрипт
 Файл : `main.js`.
+
+```
 jQuery(document).ready(function($) {
 
 
@@ -200,4 +201,4 @@ jQuery(document).ready(function($) {
     });
 
 });`
-`
+```
