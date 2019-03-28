@@ -202,3 +202,10 @@ jQuery(document).ready(function($) {
 
 });`
 ```
+
+
+## Если хотите отправить письмо на несколько email адресов, то их нужно перечислить через запятую:
+
+```
+$emailTo = 'admin@test.com, sale@test.com, info@test.com';
+```
